@@ -1,5 +1,22 @@
 <template>
   <div>
+    <i-tabs :current="current" @bindchange="handleChange">
+      <i-tab key="tab1" title="选项1"></i-tab>
+      <i-tab key="tab2" title="选项2"></i-tab>
+      <i-tab key="tab3" title="选项3"></i-tab>
+    </i-tabs>
+      <i-card title="卡片标题" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+      <view slot="content">内容不错</view>
+      <view slot="footer">尾部内容</view>
+    </i-card>
+      <i-card title="卡片标题" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+      <view slot="content">内容不错</view>
+      <view slot="footer">尾部内容</view>
+    </i-card>
+      <i-card title="卡片标题" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+      <view slot="content">内容不错</view>
+      <view slot="footer">尾部内容</view>
+    </i-card>
   </div>
 </template>
 
@@ -10,6 +27,7 @@ import card from '@/components/card'
 export default {
   data () {
     return {
+      current: 'tab1',
       motto: 'Hello miniprograme',
       userInfo: {
         nickName: 'mpvue',
@@ -33,6 +51,11 @@ export default {
     clickHandle (ev) {
       console.log('clickHandle:', ev)
       // throw {message: 'custom test'}
+    },
+    handleChange ({ detail }) {
+      this.setData({
+        current: detail.key
+      })
     }
   },
 

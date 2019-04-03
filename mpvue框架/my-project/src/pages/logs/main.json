@@ -1,3 +1,18 @@
 {
-  "navigationBarTitleText": "查看启动日志"
+  "usingComponents":{
+      "i-button": "../../../static/dist/button/index",
+      "i-card": "../../../static/dist/card/index",
+      "i-panel": "../../../static/dist/panel/index",
+      "i-grid": "../../../static/dist/grid/index",
+      "i-grid-item": "../../../static/dist/grid-item/index",
+      "i-grid-icon": "../../../static/dist/grid-icon/index",
+      "i-grid-label": "../../../static/dist/grid-label/index",
+      "i-notice-bar": "../../../static/dist/notice-bar/index",
+      "i-tag": "../../../static/dist/tag/index",
+      "i-tabs": "../../../static/dist/tabs/index",
+      "i-tab": "../../../static/dist/tab/index",
+      "i-tab-bar": "../../../static/dist/tab-bar/index",
+      "i-tab-bar-item": "../../../static/dist/tab-bar-item/index",
+      "i-avatar": "../../../static/dist/avatar/index"
+      }
 }

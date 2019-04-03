@@ -19,25 +19,18 @@
     "list": [{
       "text": "首页",
       "pagePath": "pages/index/main",
-      "iconPath": "static/tabs/home.png",
-      "selectedIconPath": "static/tabs/home-active.png"
+      "iconPath": "static/tabs/首页.png",
+      "selectedIconPath": "static/tabs/首页1.png"
+    },{
+      "text": "发布",
+      "pagePath": "pages/counter/main",
+      "iconPath": "static/tabs/输入.png",
+      "selectedIconPath": "static/tabs/输入1.png"
     }, {
-      "text": "订单",
+      "text": "我的",
       "pagePath": "pages/logs/main",
-      "iconPath": "static/tabs/orders.png",
-      "selectedIconPath": "static/tabs/orders-active.png"
-    }],
-
-    "items": [{
-      "name": "首页",
-      "pagePath": "pages/index/main",
-      "icon": "static/tabs/home.png",
-      "activeIcon": "static/tabs/home-active.png"
-    }, {
-      "name": "订单",
-      "pagePath": "pages/logs/main",
-      "icon": "static/tabs/orders.png",
-      "activeIcon": "static/tabs/orders-active.png"
+      "iconPath": "static/tabs/我的.png",
+      "selectedIconPath": "static/tabs/我的1.png"
     }],
     "position": "bottom"
   }

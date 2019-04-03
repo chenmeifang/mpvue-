@@ -1,18 +1,9 @@
 <template>
   <div>
-      <swiper v-if="imgUrls.length > 0" indidator-dots="imgUrls.length > 1" >
-      <block v-for="(item, index) in imgUrls" :key="index" >
-        <swiper-item>
-          <image :src="item" mode="scaleToFill"></image>
-        </swiper-item>
-      </block>
-    </swiper>
-
-    <ul class="container log-list">
-      <li v-for="(log, index) in logs" :class="{ red: aa }" :key="index" class="log-item">
-        <card :text="(index + 1) + ' . ' + log"></card>
-      </li>
-    </ul>
+    <!-- 怎么才能让头像居中 -->
+    <view class="touxiang">
+      <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="large"></i-avatar>
+    </view>  
   </div>
 </template>
 
@@ -58,4 +49,8 @@ export default {
 .log-item {
   margin: 10rpx;
 }
+
+/* .touxiang{
+  align-content: center
+} */
 </style>
