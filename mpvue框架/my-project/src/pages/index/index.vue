@@ -1,28 +1,25 @@
 <template>
   <div>
-    <i-tabs :current="current" @bindchange="handleChange">
-      <i-tab key="tab1" title="选项1"></i-tab>
-      <i-tab key="tab2" title="选项2"></i-tab>
-      <i-tab key="tab3" title="选项3"></i-tab>
+    <!-- current是当前标签所在的key值 key值是标识的唯一属性 -->
+    <!-- 
+      <i-tabs :current="current" @bindchange="handleChange" color="pink">
+      这里的bind就是@
+    -->
+    <i-tabs :current="current" @change="handleChange" color="pink" class='tabsclass'>
+      <i-tab key="tab1" title="竞赛求大佬"></i-tab>
+      <i-tab key="tab2" title="旅游找伙伴"></i-tab>
+      <i-tab key="tab3" title="书虫找好书"></i-tab>
     </i-tabs>
-      <i-card title="卡片标题" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
-      <view slot="content">内容不错</view>
-      <view slot="footer">尾部内容</view>
-    </i-card>
-      <i-card title="卡片标题" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
-      <view slot="content">内容不错</view>
-      <view slot="footer">尾部内容</view>
-    </i-card>
-      <i-card title="卡片标题" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
-      <view slot="content">内容不错</view>
-      <view slot="footer">尾部内容</view>
-    </i-card>
+    <router-view>
+      <jingsai></jingsai>
+    </router-view>
   </div>
 </template>
 
 <script>
 
 import card from '@/components/card'
+import jingsai from '@/components/jingsai'
 
 export default {
   data () {
@@ -37,7 +34,7 @@ export default {
   },
 
   components: {
-    card
+    card, jingsai
   },
   methods: {
     bindViewTap () {
@@ -52,10 +49,34 @@ export default {
       console.log('clickHandle:', ev)
       // throw {message: 'custom test'}
     },
-    handleChange ({ detail }) {
-      this.setData({
+    /* 这里有个要注意的地方
+       handleChange ({event})
+    */
+    handleChange (event) {
+      // console.log(event.mp.detail.key)
+      // console.log(event)
+      this.current = event.mp.detail.key
+      // console.log(this)
+      // console.log(this.options.components.jinsai)
+      /* this.setData({
         current: detail.key
-      })
+      }) */
+      /* 至于router，目前mpvue暂不支持，我在尝试后发现，插件注入什么的都没问题，
+      唯独在组件内调用this.$router.push/replace时，得到的结果不很理想。 */
+      // this.$router.replace('/src/components/jinsai.vue')
+      /* wx.navigateTo({
+        url: '/src/pages/logs/index.vue'
+      }) */
+      /* wx.navigateTo({
+        url: 'pages/logs/main'
+      }) */
+      /* wx.navigateTo({
+        url: '/src/components/jinsai.vue'
+      }) */
+      /* 开发的时候有时候会遇到一种情况，
+      比如 ：点击这个链接跳转到其他组件的情况，
+      通常会跳转到新的页面，蛋是，我们不想跳转到新页面，
+      只在当前页面切换着显示，那么就要涉及到路由的嵌套了，也可以说是子路由的使用。 */
     }
   },
 
@@ -115,5 +136,7 @@ export default {
   width:4.5rem;
   height:1rem;
   background-color:green;
+}
+.tabsclass{
 }
 </style>

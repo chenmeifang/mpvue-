@@ -23,6 +23,13 @@ export default {
       logs.unshift(Date.now())
       mpvue.setStorageSync('logs', logs)
     }
+    var that = this
+    wx.getUserInfo({
+      success: function (res) {
+        console.log(res)
+        that.$store.state.userInformation = res.userInfo
+      }
+    })
   },
   log () {
     console.log(`log at:${Date.now()}`)

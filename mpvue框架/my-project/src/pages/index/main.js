@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './index'
+/* import Fly from 'flyio/dist/npm/wx' */
 
 // add this to handle exception
 Vue.config.errorHandler = function (err) {

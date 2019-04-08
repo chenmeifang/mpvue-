@@ -2,7 +2,8 @@
   <div>
     <!-- 怎么才能让头像居中 -->
     <view class="touxiang">
-      <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="large"></i-avatar>
+      <!-- <i-avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="large"></i-avatar> -->
+           <i-avatar :src="user.avatarUrl" size="large"></i-avatar>
     </view>  
   </div>
 </template>
@@ -15,7 +16,11 @@ export default {
   components: {
     card
   },
-
+  computed: {
+    user () {
+      return this.$store.state.userInformation
+    }
+  },
   data () {
     return {
       logs: [],
