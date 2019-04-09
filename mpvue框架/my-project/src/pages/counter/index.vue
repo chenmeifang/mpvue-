@@ -1,10 +1,10 @@
 <template>
   <div>
     <!-- <i-input placeholder="id" title="id："/> -->
-    <i-input placeholder="studentNumber" title="学号："/>
+    <i-input placeholder="sort" title="类别："/>
     <i-input placeholder="detail" title="详情："/>
     <i-input placeholder="price" title="价格："/>
-    <i-button shape="circle" bind:click="handleClick">发布</i-button>
+    <i-button shape="circle" @click="handleClick">发布</i-button>
   </div>
 </template>
 

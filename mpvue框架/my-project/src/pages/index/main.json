@@ -12,6 +12,7 @@
         "i-tabs": "../../../static/dist/tabs/index",
         "i-tab": "../../../static/dist/tab/index",
         "i-tab-bar": "../../../static/dist/tab-bar/index",
-        "i-tab-bar-item": "../../../static/dist/tab-bar-item/index"
+        "i-tab-bar-item": "../../../static/dist/tab-bar-item/index",
+        "i-input": "../../../static/dist/input/index"
         }
 }
