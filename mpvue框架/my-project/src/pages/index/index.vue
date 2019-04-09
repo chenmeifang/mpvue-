@@ -5,13 +5,23 @@
       <i-tabs :current="current" @bindchange="handleChange" color="pink">
       这里的bind就是@
     -->
-    <i-tabs :current="current" @change="handleChange" color="pink" class='tabsclass'>
-      <i-tab key="tab1" title="竞赛求大佬"></i-tab>
-      <i-tab key="tab2" title="旅游找伙伴"></i-tab>
-      <i-tab key="tab3" title="书虫找好书"></i-tab>
+    <i-tabs :current="current" scroll @change="handleChange" color="pink" class='tabsclass'>
+      <i-tab key="tab1" title="快递类"></i-tab> 
+      <i-tab key="tab2" title="学习类"></i-tab>
+      <i-tab key="tab3" title="拼单类"></i-tab>
+      <i-tab key="tab4" title="旅游类"></i-tab>
+      <i-tab key="tab5" title="资源类"></i-tab>
+      <i-tab key="tab6" title="技术处理类"></i-tab>
+      <i-tab key="tab7" title="其他"></i-tab>
     </i-tabs>
     <router-view>
-      <jingsai></jingsai>
+      <parcle v-if="one"></parcle>
+      <study v-if="two"></study>
+      <pingdan v-if="three"></pingdan>
+      <travel v-if="four"></travel>
+      <resource v-if="five"></resource>
+      <technology v-if="six"></technology>
+      <others v-if="seven"></others>
     </router-view>
   </div>
 </template>
@@ -19,12 +29,32 @@
 <script>
 
 import card from '@/components/card'
-import jingsai from '@/components/jingsai'
+import parcle from '@/components/parcle'
+import study from '@/components/study'
+import pingdan from '@/components/pingdan'
+import travel from '@/components/travel'
+import resource from '@/components/resource'
+import technology from '@/components/technology'
+import others from '@/components/others'
 
 export default {
   data () {
     return {
       current: 'tab1',
+      one: true,
+      two: false,
+      three: false,
+      four: false,
+      five: false,
+      six: false,
+      seven: false,
+      tab1: 'tab1',
+      tab2: 'tab2',
+      tab3: 'tab3',
+      tab4: 'tab4',
+      tab5: 'tab5',
+      tab6: 'tab6',
+      tab7: 'tab7',
       motto: 'Hello miniprograme',
       userInfo: {
         nickName: 'mpvue',
@@ -34,7 +64,7 @@ export default {
   },
 
   components: {
-    card, jingsai
+    card, parcle, study, pingdan, travel, resource, technology, others
   },
   methods: {
     bindViewTap () {
@@ -56,6 +86,69 @@ export default {
       // console.log(event.mp.detail.key)
       // console.log(event)
       this.current = event.mp.detail.key
+      if (this.current === this.tab1) {
+        this.one = true
+        this.two = false
+        this.three = false
+        this.four = false
+        this.five = false
+        this.six = false
+        this.seven = false
+      }
+      if (this.current === this.tab2) {
+        this.one = false
+        this.two = true
+        this.three = false
+        this.four = false
+        this.five = false
+        this.six = false
+        this.seven = false
+      }
+      if (this.current === this.tab3) {
+        this.one = false
+        this.two = false
+        this.three = true
+        this.four = false
+        this.five = false
+        this.six = false
+        this.seven = false
+      }
+      if (this.current === this.tab4) {
+        this.one = false
+        this.two = false
+        this.three = false
+        this.four = true
+        this.five = false
+        this.six = false
+        this.seven = false
+      }
+      if (this.current === this.tab5) {
+        this.one = false
+        this.two = false
+        this.three = false
+        this.four = false
+        this.five = true
+        this.six = false
+        this.seven = false
+      }
+      if (this.current === this.tab6) {
+        this.one = false
+        this.two = false
+        this.three = false
+        this.four = false
+        this.five = false
+        this.six = true
+        this.seven = false
+      }
+      if (this.current === this.tab7) {
+        this.one = false
+        this.two = false
+        this.three = false
+        this.four = false
+        this.five = false
+        this.six = false
+        this.seven = true
+      }
       // console.log(this)
       // console.log(this.options.components.jinsai)
       /* this.setData({

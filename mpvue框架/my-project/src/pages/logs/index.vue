@@ -16,6 +16,8 @@ export default {
   components: {
     card
   },
+  /* computed用来监控自己定义的变量，该变量不在data里面声明，
+     直接在computed里面定义，然后就可以在页面上进行双向数据绑定展示出结果或者用作其他处理； */
   computed: {
     user () {
       return this.$store.state.userInformation
